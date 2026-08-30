@@ -2,6 +2,7 @@ import './today.css'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import Sidebar from '../../components/sidebar/sidebar.jsx'
+import Emptytasks from '../../components/emptytasks/emptytasks.jsx'
 
 export default function Today({ currentPage, setCurrentPage, task, setTask, searchValue, activity, setActivity }) {
     var location = useLocation()
@@ -27,10 +28,12 @@ export default function Today({ currentPage, setCurrentPage, task, setTask, sear
         console.log(newTask)
 
         if (targetTask[1] === true) {
-            const newActivity = [...activity, `${targetTask[0]} 항목을 완료했습니다.`]
+            const newActivity = [...activity, `${targetTask[0]} 항목을 완료했어요`]
             setActivity(newActivity)
         }
     }
+
+    let todayTask = task.filter((item) => item[2] === '/today')
 
     return (
         <>
@@ -41,17 +44,20 @@ export default function Today({ currentPage, setCurrentPage, task, setTask, sear
                         <h1>오늘</h1>
                         <hr />
                         <div className='today-tasks'>
-                            {task.map((item) => {
-                                if (item[2] !== '/today') return null
-                                if (searchValue !== "" && !item[0].includes(searchValue)) return null
+                            {todayTask.length === 0 ? (
+                                <Emptytasks currentPage={currentPage} task={task} setTask={setTask} />
+                            ):(
+                                todayTask.map((item) => {
+                                    if (searchValue !== "" && !item[0].includes(searchValue)) return null
                                 
-                                return(
-                                    <div key={item[3]} className='today-task'>
-                                        <input type='checkbox' onChange={() => {checkboxUpdate(item[3])}} checked={item[1]} />
-                                        <input type='text' defaultValue={item[0]} onChange={(e) => {taskUpdate(item[3], e.target.value)}} />
-                                    </div>
-                                )
-                            })}
+                                    return(
+                                        <div key={item[3]} className='today-task'>
+                                            <input type='checkbox' onChange={() => {checkboxUpdate(item[3])}} checked={item[1]} />
+                                            <input type='text' defaultValue={item[0]} onChange={(e) => {taskUpdate(item[3], e.target.value)}} />
+                                        </div>
+                                    )
+                                })
+                            )}
                         </div>
                     </div>
                 </div>

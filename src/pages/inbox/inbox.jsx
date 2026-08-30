@@ -2,6 +2,7 @@ import './inbox.css'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import Sidebar from '../../components/sidebar/sidebar.jsx'
+import Emptytasks from '../../components/emptytasks/emptytasks.jsx'
 
 export default function Inbox({ currentPage, setCurrentPage, task, setTask, searchValue, activity, setActivity }) {
     const location = useLocation()
@@ -27,10 +28,12 @@ export default function Inbox({ currentPage, setCurrentPage, task, setTask, sear
         console.log(newTask)
 
         if (targetTask[1] === true) {
-            const newActivity = [...activity, `${targetTask[0]} 항목을 완료했습니다.`]
+            const newActivity = [...activity, `${targetTask[0]} 항목을 완료했어요`]
             setActivity(newActivity)
         }
     }
+
+    let inboxTask = task.filter((item) => item[2] === '/inbox')
 
     return (
         <>
@@ -41,17 +44,20 @@ export default function Inbox({ currentPage, setCurrentPage, task, setTask, sear
                         <h1>보관함</h1>
                         <hr />
                         <div className='inbox-tasks'>
-                            {task.map((item) => {
-                                if (item[2] !== '/inbox') return null
-                                if (searchValue !== "" && !item[0].includes(searchValue)) return null
+                            {inboxTask.length === 0 ? (
+                                <Emptytasks currentPage={currentPage} task={task} setTask={setTask} />
+                            ):(
+                                inboxTask.map((item) => {
+                                    if (searchValue !== "" && !item[0].includes(searchValue)) return null
                                 
-                                return(
-                                    <div key={item[3]} className='inbox-task'>
-                                        <input type='checkbox' onChange={() => {checkboxUpdate(item[3])}} checked={item[1]} />
-                                        <input type='text' defaultValue={item[0]} onChange={(e) => {taskUpdate(item[3], e.target.value)}} />
-                                    </div>
-                                )
-                            })}
+                                    return(
+                                        <div key={item[3]} className='inbox-task'>
+                                            <input type='checkbox' onChange={() => {checkboxUpdate(item[3])}} checked={item[1]} />
+                                            <input type='text' defaultValue={item[0]} onChange={(e) => {taskUpdate(item[3], e.target.value)}} />
+                                        </div>
+                                    )
+                                })
+                            )}
                         </div>
                     </div>
                 </div>
