@@ -1,0 +1,50 @@
+.inbox-mainpage {
+    width: 100%;
+    height: 93vh;
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.inbox-right {
+    width: 80vw;
+    max-height: 93vh;
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.inbox-right-content {
+    width: 60vw;
+    height: 73vh;
+}
+
+.inbox-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh
+}
+
+.inbox-task {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1vw;
+}
+
+.inbox-task input[type='text'] {
+    height: 4vh;
+    font-size: 2.5vh;
+    width: 40vw;
+    border: none;
+    outline: none;
+}
+
+.inbox-task input[type='checkbox'] {
+    height: 4vh;
+    transform: scale(1.5);
+}

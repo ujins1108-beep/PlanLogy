@@ -1,0 +1,126 @@
+.sidebar-box {
+    background-color: whitesmoke;
+    height: 93vh;
+    width: 20vw;
+    border-right: 1px solid #cacaca;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.sidebar-box * {
+    margin-top: 2vh;
+
+}
+
+.new-task {
+    width: 80%;
+    height: 6vh;
+    background-color: #0066FF;
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.new-task h1 {
+    font-weight: 400;
+    font-size:2.8vh;
+    cursor: pointer;
+}
+
+.today {
+    width: 80%;
+    height: 6vh;
+    color: black;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    cursor: pointer;
+    gap: 1vw;
+}
+
+.today:hover {
+    background-color: #cacaca;
+}
+
+.today h1 {
+    font-weight: 400;
+    font-size: 2.8vh;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.today img {
+    height: 70%;
+    margin-top: 0;
+    margin-left: 1vw;
+    opacity: 0.9;
+}
+
+.inbox {
+    width: 80%;
+    height: 6vh;
+    color: black;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    cursor: pointer;
+    gap: 1vw;
+}
+
+.inbox:hover {
+    background-color: #cacaca;
+}
+
+.inbox h1 {
+    font-weight: 400;
+    font-size: 2.8vh;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.inbox img {
+    height: 70%;
+    margin-top: 0;
+    margin-left: 1vw;
+    opacity: 0.9;
+}
+
+.stats {
+    width: 80%;
+    height: 6vh;
+    color: black;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    cursor: pointer;
+    gap: 1vw;
+}
+
+.stats:hover {
+    background-color: #cacaca;
+}
+
+.stats h1 {
+    font-weight: 400;
+    font-size: 2.8vh;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.stats img {
+    height: 70%;
+    margin-top: 0;
+    margin-left: 1vw;
+    opacity: 0.9;
+}

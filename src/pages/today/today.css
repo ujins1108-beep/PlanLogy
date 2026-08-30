@@ -1,0 +1,50 @@
+.today-mainpage {
+    width: 100%;
+    height: 93vh;
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.today-right {
+    width: 80vw;
+    max-height: 93vh;
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.today-right-content {
+    width: 60vw;
+    height: 73vh;
+}
+
+.today-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh
+}
+
+.today-task {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1vw;
+}
+
+.today-task input[type='text'] {
+    height: 4vh;
+    font-size: 2.5vh;
+    width: 40vw;
+    border: none;
+    outline: none;
+}
+
+.today-task input[type='checkbox'] {
+    height: 4vh;
+    transform: scale(1.5);
+}
