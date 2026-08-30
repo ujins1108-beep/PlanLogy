@@ -33,6 +33,14 @@ export default function Inbox({ currentPage, setCurrentPage, task, setTask, sear
         }
     }
 
+    function deleteTask(id) {
+        const newTask = [...task]
+        const targetTask = newTask.findIndex(item => item[3] === id)
+        newTask.splice(targetTask, 1)
+        setTask(newTask)
+        console.log(newTask)
+    }
+
     let inboxTask = task.filter((item) => item[2] === '/inbox')
 
     return (
@@ -54,6 +62,7 @@ export default function Inbox({ currentPage, setCurrentPage, task, setTask, sear
                                         <div key={item[3]} className='inbox-task'>
                                             <input type='checkbox' onChange={() => {checkboxUpdate(item[3])}} checked={item[1]} />
                                             <input type='text' defaultValue={item[0]} onChange={(e) => {taskUpdate(item[3], e.target.value)}} />
+                                            <div onClick={() => {deleteTask(item[3])}}>×</div>
                                         </div>
                                     )
                                 })

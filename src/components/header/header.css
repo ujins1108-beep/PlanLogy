@@ -44,6 +44,10 @@
     font-size: 80%
 }
 
+.header-right img {
+    height: 95%;
+}
+
 .search-box {
     width: 30vw;
     height: 85%;

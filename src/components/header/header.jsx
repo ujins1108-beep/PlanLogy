@@ -1,8 +1,10 @@
 import './header.css'
-import search from '../../assets/search.png'
 import { useNavigate } from 'react-router-dom'
+import search from '../../assets/search.png'
+import setting from '../../assets/setting.png'
 
-export default function Header( { searchInputValue, setSearchInputValue, searchValue, setSearchValue } ) {
+
+export default function Header( { searchInputValue, setSearchInputValue, setSearchValue } ) {
     const navigate = useNavigate()
 
     return (
@@ -18,7 +20,7 @@ export default function Header( { searchInputValue, setSearchInputValue, searchV
                     </div>
                 </div>
                 <div className='header-right'>
-                    <h1>d</h1>
+                    <img src={setting} />
                 </div>
             </div>
         </>
