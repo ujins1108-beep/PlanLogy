@@ -2,7 +2,7 @@ import './sidebar.css'
 import { useNavigate } from 'react-router-dom'
 import today from '../../assets/today.png'
 import inbox from '../../assets/inbox.png'
-import stats from '../../assets/stats.png'
+import activity from '../../assets/activity.png'
 
 export default function Sidebar({ currentPage, task, setTask }) {
     const navigate = useNavigate()
@@ -38,9 +38,9 @@ export default function Sidebar({ currentPage, task, setTask }) {
                     <h1>보관함</h1>
                 </div>
 
-                <div className='stats' onClick={() => {navigate('/stats')}}>
-                    <img src={stats} />
-                    <h1>통계</h1>
+                <div className='activity' onClick={() => {navigate('/activity')}}>
+                    <img src={activity} />
+                    <h1>활동</h1>
                 </div>
             </div>
         </>

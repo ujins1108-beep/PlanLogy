@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import Sidebar from '../../components/sidebar/sidebar.jsx'
 
-export default function Inbox({ currentPage, setCurrentPage, task, setTask, searchValue }) {
+export default function Inbox({ currentPage, setCurrentPage, task, setTask, searchValue, activity, setActivity }) {
     const location = useLocation()
 
     useEffect(() => {
@@ -25,6 +25,11 @@ export default function Inbox({ currentPage, setCurrentPage, task, setTask, sear
         targetTask[1] = !targetTask[1]
         setTask(newTask)
         console.log(newTask)
+
+        if (targetTask[1] === true) {
+            const newActivity = [...activity, `${targetTask[0]} 항목을 완료했습니다.`]
+            setActivity(newActivity)
+        }
     }
 
     return (

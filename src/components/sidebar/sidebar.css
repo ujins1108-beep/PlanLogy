@@ -94,7 +94,7 @@
     opacity: 0.9;
 }
 
-.stats {
+.activity {
     width: 80%;
     height: 6vh;
     color: black;
@@ -107,18 +107,18 @@
     gap: 1vw;
 }
 
-.stats:hover {
+.activity:hover {
     background-color: #cacaca;
 }
 
-.stats h1 {
+.activity h1 {
     font-weight: 400;
     font-size: 2.8vh;
     cursor: pointer;
     opacity: 0.9;
 }
 
-.stats img {
+.activity img {
     height: 70%;
     margin-top: 0;
     margin-left: 1vw;
