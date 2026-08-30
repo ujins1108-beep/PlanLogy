@@ -1,6 +1,6 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/header/header.jsx'
 import Homepage from './pages/homepage/homepage.jsx'
 import Stats from './pages/stats/stats.jsx'
@@ -13,7 +13,14 @@ export default function App() {
   
   const [currentPage, setCurrentPage] = useState('inbox')
 
-  const [task, setTask] = useState([])
+  const [task, setTask] = useState(() => {
+    const savedTask = localStorage.getItem('planlogy-tasks')
+    return savedTask ? JSON.parse(savedTask) : []
+  })
+
+  useEffect(() => {
+    localStorage.setItem('planlogy-tasks', JSON.stringify(task))
+  }, [task])
 
   return (
     <>

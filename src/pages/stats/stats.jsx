@@ -16,7 +16,13 @@ export default function Stats({ setCurrentPage, task, setTask }) {
             <div className='stats-mainpage'>
                 <Sidebar />
                 <div className='stats-right'>
-                    <h1>dd</h1>
+                    <div className='stats-right-content'>
+                        <h1>통계</h1>
+                        <hr />
+                        <div className='checked'>
+                    
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

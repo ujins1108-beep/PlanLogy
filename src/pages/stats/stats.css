@@ -13,3 +13,9 @@
     align-items: center;
     justify-content: center;
 }
+
+.stats-right-content {
+    width: 60vw;
+    height: 73vh;
+}
+
