@@ -1,7 +1,6 @@
 .inbox-mainpage {
     width: 100%;
     height: 93vh;
-    margin-top: 7vh;
     display: flex;
     flex-direction: row;
 }
