@@ -25,7 +25,7 @@
 .today-tasks {
     display: flex;
     flex-direction: column;
-    gap: 2vh
+    gap: 2.5vh
 }
 
 .today-task {

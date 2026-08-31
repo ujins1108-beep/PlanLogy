@@ -18,7 +18,7 @@ export default function Emptytasks({ currentPage, task, setTask }) {
     return (
         <div className='emptytasks-box'>
             <h1>일정이 없어요</h1>
-            <div className='addTask-button' onClick={addTask}>새 일정 만들기</div>
+            <div className='addTask-button' onClick={addTask}>+ 새 일정 만들기</div>
         </div>
     )
 }

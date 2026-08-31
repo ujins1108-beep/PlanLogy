@@ -11,6 +11,13 @@ export default function Activity({ setCurrentPage, activity }) {
         setCurrentPage(location.pathname)
     }, [setCurrentPage, location.pathname])
 
+    let now = new Date()
+    let year = now.getFullYear()
+    let month = String(now.getMonth() + 1).padStart(2,0)
+    let date = String(now.getDate()).padStart(2, 0)
+    let hours = now.getHours()
+    let minutes = now.getMinutes()
+
     return (
         <>
             <div className='activity-mainpage'>
@@ -22,9 +29,9 @@ export default function Activity({ setCurrentPage, activity }) {
                         <div className='activity-list'>
                             {activity.map((item) => {
                                 return (
-                                    <>
-                                        <div className='activity-item'>{item}</div>
-                                    </>
+                                    <div style={{display: 'flex', flexDirection: 'row', gap: '1vw'}}>
+                                        <span style={{display: 'flex', alignItems: 'center', color: 'rgb(100, 100, 100)'}}>({year}-{month}-{date}-{hours}-{minutes})</span><div className='activity-item'>{item}</div>
+                                    </div>
                                 )
                             })}
                         </div>

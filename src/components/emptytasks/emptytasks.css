@@ -7,6 +7,10 @@
     justify-content: center;
 }
 
+.emptytasks-box h1 {
+    animation: fadein 0.3s;
+}
+
 .addTask-button {
     width: 10vw;
     height: 5vh;
@@ -17,4 +21,15 @@
     justify-content: center;
     border-radius: 10px;
     cursor: pointer;
+    animation: fadein 0.1s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
