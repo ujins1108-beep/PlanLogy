@@ -1,6 +1,6 @@
 .sidebar-box {
     background-color: whitesmoke;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 51px);
     width: 300px;
     border-right: 1px solid #cacaca;
     display: flex;
